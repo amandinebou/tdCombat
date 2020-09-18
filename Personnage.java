@@ -1,5 +1,3 @@
-package tdSorcier;
-
 public abstract class Personnage extends Victim {
     protected int pv;
     protected double attPouvoir;

@@ -1,5 +1,5 @@
 public class GnomeJardin extends NainJardin {
-    public GnomeJardin(String name, int solid) {
+    public GnomeJardin(String name, int pv) {
         //ici les pv sont la solidité du nain
         super(name, pv);
     }

@@ -1,5 +1,3 @@
-package tdSorcier;
-
 public class Sorcier extends Personnage {
     protected double attPouvoir;
 
@@ -27,7 +25,7 @@ public class Sorcier extends Personnage {
         }
     }
 
-    public void attaque(Vicitm v) {
+    public void attaque(Victim v) {
         System.out.println(v.name + " subit Charme ");
         if (!(v.mort()) && !(this.mort())) {
             int ptVie = this.getVie();

@@ -1,6 +1,3 @@
-package tdSorcier;
-import tdSorcier.Victim;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("");
@@ -57,7 +54,7 @@ public class Main {
         
         System.out.println("");
         System.out.println("Les vainqueurs sont :");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             if (!(tableJeu[i].mort())) {
                 System.out.println(tableJeu[i].name);
             }
@@ -67,7 +64,7 @@ public class Main {
 
     public static boolean joueursEnVie(Victim[] tableau) {
         int compteur = 0;
-        for(int i = 0; i < 10; i++) {
+        for(int i = 0; i < 20; i++) {
             if (tableau[i] instanceof Monster && tableau[i].mort()) {
                 compteur += 1;
             }

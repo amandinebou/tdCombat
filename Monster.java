@@ -1,11 +1,9 @@
-package tdSorcier;
-
 public class Monster extends Personnage {
     public Monster(String name, int pv) {
         super(name, pv);
     }
 
-    public void attaque(Victim pv) {
+    public void attaque(Victim v) {
         System.out.println(v.name + " subit Frappe");
         if (!(v.mort()) && !(this.mort())) {
             int ptVie = this.getVie();
