@@ -1,20 +1,20 @@
-package JeuSorcier;
+package tdSorcier;
 
 public class Sorcier extends Personnage {
     protected double attPouvoir;
 
-    public Sorcier(String nom, int ptVie) {
-        super(nom, ptVie);
+    public Sorcier(String name, int pv) {
+        super(name, pv);
         this.attPouvoir = Math.random();
+    }
+
+    public double getPouvoir() {
+        return this.attPouvoir;
     }
 
     public int subitCharme(int coup) {
         System.out.println("Cela n'a aucun effet");
         return 0;
-    }
-
-    public double getPouvoir() {
-        return this.attPouvoir;
     }
 
     public int subitFrappe(int coup) {
@@ -27,12 +27,12 @@ public class Sorcier extends Personnage {
         }
     }
 
-    public void attaque(Personnage p) {
-        System.out.println(p.name + " subit Charme ");
-        if (!(p.mort()) && !(this.mort())) {
+    public void attaque(Vicitm v) {
+        System.out.println(v.name + " subit Charme ");
+        if (!(v.mort()) && !(this.mort())) {
             int ptVie = this.getVie();
             int coup = -(int)(ptVie * this.attPouvoir);
-            int coupRetour = p.subitCharme(coup);
+            int coupRetour = v.subitCharme(coup);
             this.addVie(coupRetour);            
         }
     }

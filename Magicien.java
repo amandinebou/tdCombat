@@ -1,4 +1,4 @@
-package JeuSorcier;
+package tdSorcier;
 
 interface SuperPouvoir {
     int extra = 2;

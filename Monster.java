@@ -1,16 +1,16 @@
-package JeuSorcier;
+package tdSorcier;
 
 public class Monster extends Personnage {
-    public Monster(String nom, int ptVie) {
-        super(nom, ptVie);
+    public Monster(String name, int pv) {
+        super(name, pv);
     }
 
-    public void attaque(Personnage p) {
-        System.out.println(p.name + " subit Frappe");
-        if (!(p.mort()) && !(this.mort())) {
+    public void attaque(Victim pv {
+        System.out.println(v.name + " subit Frappe");
+        if (!(v.mort()) && !(this.mort())) {
             int ptVie = this.getVie();
             int coup = -ptVie / 2;
-            int coupRetour = p.subitFrappe(coup);
+            int coupRetour = v.subitFrappe(coup);
             this.addVie(coupRetour);
         }
     }
