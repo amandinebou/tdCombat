@@ -6,8 +6,8 @@ public class GnomeJardin extends NainJardin {
 
     public int subitCharme(int coup) {
         int sort = (int) ((Math.random()*this.pv));
-        if (coup < sort) {
-            return -coup;
+        if (-coup < sort) {
+            return coup;
         } else {
             return -1;
         }

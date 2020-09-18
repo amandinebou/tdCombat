@@ -5,6 +5,8 @@ public abstract class Personnage extends Victim {
     public Personnage(String name, int pv) {
         super(name, pv);
     }
+
+    public abstract void attaque(Victim v);
 }
 
 

@@ -17,19 +17,15 @@ public class Sorcier extends Personnage {
 
     public int subitFrappe(int coup) {
         this.addVie(coup);
-        if (this.pv > 0) {
-            int coupRetour = -(int)((this.pv) * (this.attPouvoir));
-            return coupRetour;
-        } else {
-            return 0;
-        }
+        int coupRetour = (int)((this.getVie()) * (this.getPouvoir()));
+        return -coupRetour;
     }
 
     public void attaque(Victim v) {
         System.out.println(v.name + " subit Charme ");
         if (!(v.mort()) && !(this.mort())) {
             int ptVie = this.getVie();
-            int coup = -(int)(ptVie * this.attPouvoir);
+            int coup = -(int)(ptVie * this.getPouvoir());
             int coupRetour = v.subitCharme(coup);
             this.addVie(coupRetour);            
         }

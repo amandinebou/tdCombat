@@ -16,8 +16,8 @@ public class Monster extends Personnage {
     public int subitFrappe(int coup) {
         this.addVie(coup);
         if (this.pv > 0) {  
-            int coupRetour = -(int)((this.pv / 2));
-            return coupRetour;
+            int coupRetour = (int)((this.getVie() / 2));
+            return -coupRetour;
         } else {
             return 0;
         }
@@ -25,11 +25,7 @@ public class Monster extends Personnage {
     
     public int subitCharme(int coup) {
         this.addVie(coup);
-        if (this.pv > 0) {
-            int coupRetour = (int)((this.pv / 2));
-            return coupRetour;
-        } else {
-            return 0;
-        }
+        int coupRetour = (int)((this.getVie()/ 2));
+        return coupRetour;
     }
 }

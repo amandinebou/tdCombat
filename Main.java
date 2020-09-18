@@ -1,12 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("");
-        System.out.println("*****VOUS JOUEZ A *****");
+        System.out.println("*****VOUS JOUEZ A MONSTRES vs SORCIERS*****");
         System.out.println("");
         //creation 5 monstres and 5 sorciers
         System.out.println("Présentation des joueurs :\n");
         Victim[] tableJeu = new Victim[20];
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 15; i++) {
             if (i < 5) {
                 tableJeu[i] = new Monster("Monstre_" + (i+1), (int)(Math.random() * 100));
             }
@@ -16,10 +16,10 @@ public class Main {
             if (i >= 8 && i < 10) {
                 tableJeu[i] = new Magicien("Magicien_" + (i+1), (int)(Math.random() * 100));
             }
-            if (i >= 10 && i < 15) {
+            if (i >= 10 && i < 13) {
                 tableJeu[i] = new NainJardin("Nain_" + (i+1), (int)(Math.random() * 100));
             }
-            if (i >= 15 && i < 20) {
+            if (i >= 13 && i < 15) {
                 tableJeu[i] = new GnomeJardin("Gnome_" + (i+1), (int)(Math.random() *100));
             }
             System.out.println(tableJeu[i]);
@@ -27,34 +27,27 @@ public class Main {
         System.out.println("");
         System.out.println("__________________________________________");
 
-        /*while (joueursEnVie(tableJeu)) {
-            int joueur1 = (int)(Math.random()*20);
-            int joueur2 = (int)(Math.random()*20);
+        while (joueursEnVie(tableJeu)) {
 
+            //le joueur 1 attaque et le joueur 2 se fait attaquer
+            //les nains et gnomes ne peuvent pas attaquer
+            int joueur1 = (int)(Math.random()*10);
+            int joueur2 = (int)(Math.random()*15);
+            
             //affrontement des joueurs
-            if (!(joueur1 == joueur2)){
+            if (!(joueur1 == joueur2) && !(tableJeu[joueur1].mort()) && !(tableJeu[joueur2].mort())){
                 System.out.println("");
-                if (joueur1 < 10) {
-                    Personnage j1 = tableJeu[joueur1];
-                } else {
-                    NainJardin j1 = autresPers[joueur1 - 10];
-                }
-                if (joueur2 < 10) {
-                    Personnage j2 = tableJeu[joueur1];
-                } else {
-                    NainJardin j2 = autresPers[joueur1 - 10];
-                }
-                System.out.println(j1.name + " attaque " + j2.name + "\n");
-                j1.attaque(j2);
-                System.out.println(j1);
-                System.out.println(j2);
+                System.out.println(tableJeu[joueur1].name + " attaque " + tableJeu[joueur2].name + "\n");
+                tableJeu[joueur1].attaque(tableJeu[joueur2]);
+                System.out.println(tableJeu[joueur1]);
+                System.out.println(tableJeu[joueur2]);
                 System.out.println("__________________________________________");
             }
-        }*/
+        }
         
         System.out.println("");
         System.out.println("Les vainqueurs sont :");
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 15; i++) {
             if (!(tableJeu[i].mort())) {
                 System.out.println(tableJeu[i].name);
             }
@@ -64,7 +57,7 @@ public class Main {
 
     public static boolean joueursEnVie(Victim[] tableau) {
         int compteur = 0;
-        for(int i = 0; i < 20; i++) {
+        for(int i = 0; i < 10; i++) {
             if (tableau[i] instanceof Monster && tableau[i].mort()) {
                 compteur += 1;
             }
@@ -75,4 +68,5 @@ public class Main {
             return false;
         }
     } 
+
 }

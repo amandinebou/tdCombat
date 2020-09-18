@@ -6,14 +6,14 @@ public class NainJardin extends Victim {
     }
 
     public int subitFrappe(int coup) {
-        if (coup > this.pv) {
+        if (-coup > this.pv) {
             //le nain perd sa solidité et renvoie un coup d'une intensité de sa solidité initiale
             int coupRetour = -this.pv;
-            this.solid = 0;
+            this.pv = 0;
             return coupRetour;
         } else {
             //le nain reste intact et renvoie le coup
-            return -coup;
+            return coup;
         }
     }
 
@@ -22,7 +22,7 @@ public class NainJardin extends Victim {
         return -1;
     }
 
-    public void attaque(Victim v) {
-        System.out.println("Un nain ou gnome de jardin ne peut pas attaquer");
+    public void attaque(Victim v){
+        //un nain ou un gnome ne peut pas attaquer;
     }
 }
