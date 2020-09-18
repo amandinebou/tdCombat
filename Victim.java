@@ -1,5 +1,3 @@
-package tdSorcier 
-
 public abstract class Victim {
     protected String name;
     protected int pv;

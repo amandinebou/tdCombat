@@ -1,4 +1,5 @@
 package tdSorcier;
+import tdSorcier.Victim;
 
 public class Main {
     public static void main(String[] args) {

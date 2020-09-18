@@ -1,7 +1,6 @@
 package tdSorcier;
 
 public abstract class Personnage extends Victim {
-    protected String name;
     protected int pv;
     protected double attPouvoir;
 

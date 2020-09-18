@@ -1,10 +1,8 @@
-package tdSorcier;
-
 public class NainJardin extends Victim {
     protected int solid;
 
-    public NainJardin(String name, int pv, int solid) {
-        super(name, pv);
+    public NainJardin(String name, int solid) {
+        super(name);
         this.solid = solid;
     }
 

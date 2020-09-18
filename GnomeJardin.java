@@ -1,14 +1,11 @@
-package tdSorcier;
-
-import tdSorcier.NainJardin;
-
 public class GnomeJardin extends NainJardin {
-    public GnomeJardin(String name, int pv, int solid) {
-        super(nom, ptVie, solid);
+    public GnomeJardin(String name, int solid) {
+        //ici les pv sont la solidité du nain
+        super(name, pv);
     }
 
     public int subitCharme(int coup) {
-        int sort = (int) ((Math.random()*this.solid));
+        int sort = (int) ((Math.random()*this.pv));
         if (coup < sort) {
             return -coup;
         } else {

@@ -5,7 +5,7 @@ public class Monster extends Personnage {
         super(name, pv);
     }
 
-    public void attaque(Victim pv {
+    public void attaque(Victim pv) {
         System.out.println(v.name + " subit Frappe");
         if (!(v.mort()) && !(this.mort())) {
             int ptVie = this.getVie();
